@@ -1,0 +1,107 @@
+[
+    {
+      "title": "Six",
+      "playwright": ["Toby Marlow", "Lucy Moss"],
+      "composer": ["Toby Marlow", "Lucy Moss"],
+      "yearOnBroadway": 2021,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "In the Heights",
+      "playwright": ["Quiara Alegria Hudea"],
+      "composer": ["Lin-Manuel Miranda"],
+      "yearOnBroadway": 2008,
+      "bestMusicalWinner": true
+    },
+    {
+      "title": "Dear Evan Hansen",
+      "playwright": ["Steven Levenson"],
+      "composer": ["Benj Pasek", "Justin Paul"],
+      "yearOnBroadway": 2017,
+      "bestMusicalWinner": true
+    },
+    {
+      "title": "Beetlejuice",
+      "playwright": ["Scott Brown", "Anthony King"],
+      "composer": ["Eddie Perfect"],
+      "yearOnBroadway": 2019,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "Come From Away",
+      "playwright": ["Irene Sankoff", "David Hein"],
+      "composer": ["Irene Sankoff", "David Hein"],
+      "yearOnBroadway": 2017,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "The Addams Family",
+      "playwright": ["Marshall Brickman", "Rick Elice"],
+      "composer": ["Andrew Lippa"],
+      "yearOnBroadway": 2010,
+      "bestMusicalWinner": true
+    },
+    {
+      "title": "Fiddler on the Roof",
+      "playwright": ["Joseph Stein"],
+      "composer": ["Jerry Bock"],
+      "yearOnBroadway": 1964,
+      "bestMusicalWinner": true
+    },
+    {
+      "title": "& Juliet",
+      "playwright": ["David West Read"],
+      "composer": ["Max Martin"],
+      "yearOnBroadway": 2022,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "Miss Saigon",
+      "playwright": ["Alain Boublil", "Claude-Michel Schonberg"],
+      "composer": ["Claude-Michel Schonberg"],
+      "yearOnBroadway": 1991,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "Hamilton",
+      "playwright": ["Lin-Manuel Miranda"],
+      "composer": ["Lin-Manuel Miranda"],
+      "yearOnBroadway": 2015,
+      "bestMusicalWinner": true
+    },
+    {
+      "title": "Into the Woods",
+      "playwright": ["James Lapine"],
+      "composer": ["Steven Sondheim"],
+      "yearOnBroadway": 1987,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "Little Shop of Horrors",
+      "playwright": ["Howard Ashman"],
+      "composer": ["Alan Menken"],
+      "yearOnBroadway": 2003,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "Sweeney Todd: The Demon Barber of Fleet Street",
+      "playwright": ["Hugh Wheeler"],
+      "composer": ["Stephen Sondheim"],
+      "yearOnBroadway": 1979,
+      "bestMusicalWinner": true
+    },
+    {
+      "title": "Urinetown",
+      "playwright": ["Greg Kotis"],
+      "composer": ["Mark Hollmann"],
+      "yearOnBroadway": 2001,
+      "bestMusicalWinner": false
+    },
+    {
+      "title": "Gypsy",
+      "playwright": ["Arthur Laurents"],
+      "composer": ["Jule Styne"],
+      "yearOnBroadway": 1959,
+      "bestMusicalWinner": false
+    }
+]
