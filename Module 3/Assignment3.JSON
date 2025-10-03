@@ -1,0 +1,804 @@
+use Broadway
+switched to db Broadway
+db["Musicals"].find()
+
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  playwright: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  composer: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  yearOnBroadway: 2021,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cc'),
+  title: 'In the Heights',
+  playwright: [
+    'Quiara Alegria Hudea'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2008,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cd'),
+  title: 'Dear Evan Hansen',
+  playwright: [
+    'Steven Levenson'
+  ],
+  composer: [
+    'Benj Pasek',
+    'Justin Paul'
+  ],
+  yearOnBroadway: 2016,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  playwright: [
+    'Scott Brown',
+    'Anthony King'
+  ],
+  composer: [
+    'Eddie Perfect'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cf'),
+  title: 'Come From Away',
+  playwright: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  composer: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  yearOnBroadway: 2017,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d0'),
+  title: 'The Addams Family',
+  playwright: [
+    'Marshall Brickman',
+    'Rick Elice'
+  ],
+  composer: [
+    'Andrew Lippa'
+  ],
+  yearOnBroadway: 2010,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d1'),
+  title: 'Fiddler on the Roof',
+  playwright: [
+    'Joseph Stein'
+  ],
+  composer: [
+    'Jerry Bock'
+  ],
+  yearOnBroadway: 1964,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  playwright: [
+    'David West Read'
+  ],
+  composer: [
+    'Max Martin'
+  ],
+  yearOnBroadway: 2022,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d3'),
+  title: 'Miss Saigon',
+  playwright: [
+    'Alain Boublil',
+    'Claude-Michel Schonberg'
+  ],
+  composer: [
+    'Claude-Michel Schonberg'
+  ],
+  yearOnBroadway: 1991,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d4'),
+  title: 'Hamilton',
+  playwright: [
+    'Lin-Manuel Miranda'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2015,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d5'),
+  title: 'Into the Woods',
+  playwright: [
+    'James Lapine'
+  ],
+  composer: [
+    'Stephen Sondheim'
+  ],
+  yearOnBroadway: 1987,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d6'),
+  title: 'Little Shop of Horrors',
+  playwright: [
+    'Howard Ashman'
+  ],
+  composer: [
+    'Alan Menken'
+  ],
+  yearOnBroadway: 2003,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d7'),
+  title: 'Sweeney Todd: The Demon Barber of Fleet Street',
+  playwright: [
+    'Hugh Wheeler'
+  ],
+  composer: [
+    'Stephen Sondheim'
+  ],
+  yearOnBroadway: 1979,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d8'),
+  title: 'Urinetown',
+  playwright: [
+    'Greg Kotis'
+  ],
+  composer: [
+    'Mark Hollmann'
+  ],
+  yearOnBroadway: 2001,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d9'),
+  title: 'Gypsy',
+  playwright: [
+    'Arthur Laurents'
+  ],
+  composer: [
+    'Jule Styne'
+  ],
+  yearOnBroadway: 1959,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76dfffbde4895936d46db'),
+  title: 'Hadestown',
+  playwright: [
+    'Anais Mitchell'
+  ],
+  composer: [
+    'Anais Mitchell'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: true
+}
+
+db["Musicals"].find({yearOnBroadway: {$gt: 2008}}, {title: 1, yearOnBroadway: 1})
+
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  yearOnBroadway: 2021
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cd'),
+  title: 'Dear Evan Hansen',
+  yearOnBroadway: 2016
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  yearOnBroadway: 2019
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cf'),
+  title: 'Come From Away',
+  yearOnBroadway: 2017
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d0'),
+  title: 'The Addams Family',
+  yearOnBroadway: 2010
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  yearOnBroadway: 2022
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d4'),
+  title: 'Hamilton',
+  yearOnBroadway: 2015
+}
+{
+  _id: ObjectId('68c76dfffbde4895936d46db'),
+  title: 'Hadestown',
+  yearOnBroadway: 2019
+}
+
+db["Musicals"].find({title: "Hamilton", yearOnBroadway: 2015})
+
+{
+  _id: ObjectId('68c76357fbde4895936d46d4'),
+  title: 'Hamilton',
+  playwright: [
+    'Lin-Manuel Miranda'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2015,
+  bestMusicalWinner: true
+}
+
+db["Musicals"].find({}, {title: 1, playwright: 1, bestMusicalWinner: 1})
+
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  playwright: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cc'),
+  title: 'In the Heights',
+  playwright: [
+    'Quiara Alegria Hudea'
+  ],
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cd'),
+  title: 'Dear Evan Hansen',
+  playwright: [
+    'Steven Levenson'
+  ],
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  playwright: [
+    'Scott Brown',
+    'Anthony King'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cf'),
+  title: 'Come From Away',
+  playwright: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d0'),
+  title: 'The Addams Family',
+  playwright: [
+    'Marshall Brickman',
+    'Rick Elice'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d1'),
+  title: 'Fiddler on the Roof',
+  playwright: [
+    'Joseph Stein'
+  ],
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  playwright: [
+    'David West Read'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d3'),
+  title: 'Miss Saigon',
+  playwright: [
+    'Alain Boublil',
+    'Claude-Michel Schonberg'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d4'),
+  title: 'Hamilton',
+  playwright: [
+    'Lin-Manuel Miranda'
+  ],
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d5'),
+  title: 'Into the Woods',
+  playwright: [
+    'James Lapine'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d6'),
+  title: 'Little Shop of Horrors',
+  playwright: [
+    'Howard Ashman'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d7'),
+  title: 'Sweeney Todd: The Demon Barber of Fleet Street',
+  playwright: [
+    'Hugh Wheeler'
+  ],
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d8'),
+  title: 'Urinetown',
+  playwright: [
+    'Greg Kotis'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d9'),
+  title: 'Gypsy',
+  playwright: [
+    'Arthur Laurents'
+  ],
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76dfffbde4895936d46db'),
+  title: 'Hadestown',
+  playwright: [
+    'Anais Mitchell'
+  ],
+  bestMusicalWinner: true
+}
+
+db["Musicals"].findOne({_id: ObjectId('68c76357fbde4895936d46d7')})
+
+{
+  _id: ObjectId('68c76357fbde4895936d46d7'),
+  title: 'Sweeney Todd: The Demon Barber of Fleet Street',
+  playwright: [
+    'Hugh Wheeler'
+  ],
+  composer: [
+    'Stephen Sondheim'
+  ],
+  yearOnBroadway: 1979,
+  bestMusicalWinner: true
+}
+
+db["Musicals"].find({}).sort({yearOnBroadway: -1}).limit(5)
+
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  playwright: [
+    'David West Read'
+  ],
+  composer: [
+    'Max Martin'
+  ],
+  yearOnBroadway: 2022,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  playwright: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  composer: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  yearOnBroadway: 2021,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76dfffbde4895936d46db'),
+  title: 'Hadestown',
+  playwright: [
+    'Anais Mitchell'
+  ],
+  composer: [
+    'Anais Mitchell'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  playwright: [
+    'Scott Brown',
+    'Anthony King'
+  ],
+  composer: [
+    'Eddie Perfect'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cf'),
+  title: 'Come From Away',
+  playwright: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  composer: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  yearOnBroadway: 2017,
+  bestMusicalWinner: false
+}
+
+db["Musicals"].find({yearOnBroadway: {$gt: 2003}).sort({yearOnBroadway: 1}).limit(10)
+SyntaxError: Unexpected token, expected "," (1:48)
+
+> 1 | db["Musicals"].find({yearOnBroadway: {$gt: 2003}).sort({yearOnBroadway: 1}).limit(10)
+    |                                                 ^
+db["Musicals"].find({yearOnBroadway: {$gt: 2003}}).sort({yearOnBroadway: 1}).limit(10)
+
+{
+  _id: ObjectId('68c76357fbde4895936d46cc'),
+  title: 'In the Heights',
+  playwright: [
+    'Quiara Alegria Hudea'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2008,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d0'),
+  title: 'The Addams Family',
+  playwright: [
+    'Marshall Brickman',
+    'Rick Elice'
+  ],
+  composer: [
+    'Andrew Lippa'
+  ],
+  yearOnBroadway: 2010,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d4'),
+  title: 'Hamilton',
+  playwright: [
+    'Lin-Manuel Miranda'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2015,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cd'),
+  title: 'Dear Evan Hansen',
+  playwright: [
+    'Steven Levenson'
+  ],
+  composer: [
+    'Benj Pasek',
+    'Justin Paul'
+  ],
+  yearOnBroadway: 2016,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cf'),
+  title: 'Come From Away',
+  playwright: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  composer: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  yearOnBroadway: 2017,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  playwright: [
+    'Scott Brown',
+    'Anthony King'
+  ],
+  composer: [
+    'Eddie Perfect'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76dfffbde4895936d46db'),
+  title: 'Hadestown',
+  playwright: [
+    'Anais Mitchell'
+  ],
+  composer: [
+    'Anais Mitchell'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  playwright: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  composer: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  yearOnBroadway: 2021,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  playwright: [
+    'David West Read'
+  ],
+  composer: [
+    'Max Martin'
+  ],
+  yearOnBroadway: 2022,
+  bestMusicalWinner: false
+}
+
+db["Musicals"].find({yearOnBroadway: {$gt: 2003}}).sort({yearOnBroadway: -1}).limit(10)
+
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  playwright: [
+    'David West Read'
+  ],
+  composer: [
+    'Max Martin'
+  ],
+  yearOnBroadway: 2022,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  playwright: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  composer: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  yearOnBroadway: 2021,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  playwright: [
+    'Scott Brown',
+    'Anthony King'
+  ],
+  composer: [
+    'Eddie Perfect'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76dfffbde4895936d46db'),
+  title: 'Hadestown',
+  playwright: [
+    'Anais Mitchell'
+  ],
+  composer: [
+    'Anais Mitchell'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cf'),
+  title: 'Come From Away',
+  playwright: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  composer: [
+    'Irene Sankoff',
+    'David Hein'
+  ],
+  yearOnBroadway: 2017,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cd'),
+  title: 'Dear Evan Hansen',
+  playwright: [
+    'Steven Levenson'
+  ],
+  composer: [
+    'Benj Pasek',
+    'Justin Paul'
+  ],
+  yearOnBroadway: 2016,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d4'),
+  title: 'Hamilton',
+  playwright: [
+    'Lin-Manuel Miranda'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2015,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d0'),
+  title: 'The Addams Family',
+  playwright: [
+    'Marshall Brickman',
+    'Rick Elice'
+  ],
+  composer: [
+    'Andrew Lippa'
+  ],
+  yearOnBroadway: 2010,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cc'),
+  title: 'In the Heights',
+  playwright: [
+    'Quiara Alegria Hudea'
+  ],
+  composer: [
+    'Lin-Manuel Miranda'
+  ],
+  yearOnBroadway: 2008,
+  bestMusicalWinner: true
+}
+
+db["Musicals"].find({yearOnBroadway: {$gt: 1964}}).sort({yearOnBroadway: -1}).limit(3)
+
+{
+  _id: ObjectId('68c76357fbde4895936d46d2'),
+  title: '& Juliet',
+  playwright: [
+    'David West Read'
+  ],
+  composer: [
+    'Max Martin'
+  ],
+  yearOnBroadway: 2022,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46cb'),
+  title: 'Six',
+  playwright: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  composer: [
+    'Toby Marlow',
+    'Lucy Moss'
+  ],
+  yearOnBroadway: 2021,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46ce'),
+  title: 'Beetlejuice',
+  playwright: [
+    'Scott Brown',
+    'Anthony King'
+  ],
+  composer: [
+    'Eddie Perfect'
+  ],
+  yearOnBroadway: 2019,
+  bestMusicalWinner: false
+}
+
+db["Musicals"].find({yearOnBroadway: {$gt: 1964}}).sort({yearOnBroadway: 1}).limit(3)
+
+{
+  _id: ObjectId('68c76357fbde4895936d46d7'),
+  title: 'Sweeney Todd: The Demon Barber of Fleet Street',
+  playwright: [
+    'Hugh Wheeler'
+  ],
+  composer: [
+    'Stephen Sondheim'
+  ],
+  yearOnBroadway: 1979,
+  bestMusicalWinner: true
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d5'),
+  title: 'Into the Woods',
+  playwright: [
+    'James Lapine'
+  ],
+  composer: [
+    'Stephen Sondheim'
+  ],
+  yearOnBroadway: 1987,
+  bestMusicalWinner: false
+}
+{
+  _id: ObjectId('68c76357fbde4895936d46d3'),
+  title: 'Miss Saigon',
+  playwright: [
+    'Alain Boublil',
+    'Claude-Michel Schonberg'
+  ],
+  composer: [
+    'Claude-Michel Schonberg'
+  ],
+  yearOnBroadway: 1991,
+  bestMusicalWinner: false
+}
