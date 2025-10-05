@@ -1,0 +1,1351 @@
+use local
+switched to db local
+db["Products"].find({price: {$gt: 500}})
+{
+  _id: ObjectId('68e2b9588084854843214b17'),
+  product_id: 101,
+  product_name: 'Sofa',
+  category: 'Home Decor',
+  price: 1282.36,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b18'),
+  product_id: 102,
+  product_name: 'Refrigerator',
+  category: 'Furniture',
+  price: 1776.68,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b19'),
+  product_id: 103,
+  product_name: 'Microwave',
+  category: 'Furniture',
+  price: 954.99,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1b'),
+  product_id: 105,
+  product_name: 'Watch',
+  category: 'Computers',
+  price: 1432.22,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1c'),
+  product_id: 106,
+  product_name: 'Sofa',
+  category: 'Furniture',
+  price: 1526.35,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1d'),
+  product_id: 107,
+  product_name: 'Stove',
+  category: 'Furniture',
+  price: 1131.33,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1e'),
+  product_id: 108,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 1546.52,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1f'),
+  product_id: 109,
+  product_name: 'Camera',
+  category: 'Furniture',
+  price: 997.72,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b20'),
+  product_id: 110,
+  product_name: 'Chair',
+  category: 'Furniture',
+  price: 1055.01,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b21'),
+  product_id: 111,
+  product_name: 'Watch',
+  category: 'Home Decor',
+  price: 866.53,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b25'),
+  product_id: 115,
+  product_name: 'Tablet',
+  category: 'Computers',
+  price: 1280.09,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b26'),
+  product_id: 116,
+  product_name: 'Laptop',
+  category: 'Furniture',
+  price: 642.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b27'),
+  product_id: 117,
+  product_name: 'Smartphone',
+  category: 'Computers',
+  price: 1026.97,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b28'),
+  product_id: 118,
+  product_name: 'Printer',
+  category: 'Furniture',
+  price: 1816.98,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b29'),
+  product_id: 119,
+  product_name: 'Printer',
+  category: 'Electronics',
+  price: 513.6,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2a'),
+  product_id: 120,
+  product_name: 'Lamp',
+  category: 'Home Decor',
+  price: 832.56,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2b'),
+  product_id: 121,
+  product_name: 'Monitor',
+  category: 'Home Decor',
+  price: 1515.99,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2e'),
+  product_id: 124,
+  product_name: 'Microwave',
+  category: 'Electronics',
+  price: 593.71,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b30'),
+  product_id: 126,
+  product_name: 'Printer',
+  category: 'Computers',
+  price: 1860.8,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b31'),
+  product_id: 127,
+  product_name: 'Refrigerator',
+  category: 'Electronics',
+  price: 1620.08,
+  in_stock: true,
+  ratings: 2
+}
+Type "it" for more
+db["Products"].find({price: {$lt: 200}, in_stock: true})
+{
+  _id: ObjectId('68e2b9588084854843214b22'),
+  product_id: 112,
+  product_name: 'Desk',
+  category: 'Home Decor',
+  price: 70.33,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b24'),
+  product_id: 114,
+  product_name: 'Printer',
+  category: 'Computers',
+  price: 82.23,
+  in_stock: true,
+  ratings: 3
+}
+db["Products"].find({"$or": [{category: "Electronics"}, {category: "Furniture"}]})
+{
+  _id: ObjectId('68e2b9588084854843214b18'),
+  product_id: 102,
+  product_name: 'Refrigerator',
+  category: 'Furniture',
+  price: 1776.68,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b19'),
+  product_id: 103,
+  product_name: 'Microwave',
+  category: 'Furniture',
+  price: 954.99,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1c'),
+  product_id: 106,
+  product_name: 'Sofa',
+  category: 'Furniture',
+  price: 1526.35,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1d'),
+  product_id: 107,
+  product_name: 'Stove',
+  category: 'Furniture',
+  price: 1131.33,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1f'),
+  product_id: 109,
+  product_name: 'Camera',
+  category: 'Furniture',
+  price: 997.72,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b20'),
+  product_id: 110,
+  product_name: 'Chair',
+  category: 'Furniture',
+  price: 1055.01,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b23'),
+  product_id: 113,
+  product_name: 'Laptop',
+  category: 'Electronics',
+  price: 233.63,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b26'),
+  product_id: 116,
+  product_name: 'Laptop',
+  category: 'Furniture',
+  price: 642.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b28'),
+  product_id: 118,
+  product_name: 'Printer',
+  category: 'Furniture',
+  price: 1816.98,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b29'),
+  product_id: 119,
+  product_name: 'Printer',
+  category: 'Electronics',
+  price: 513.6,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2e'),
+  product_id: 124,
+  product_name: 'Microwave',
+  category: 'Electronics',
+  price: 593.71,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b31'),
+  product_id: 127,
+  product_name: 'Refrigerator',
+  category: 'Electronics',
+  price: 1620.08,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b32'),
+  product_id: 128,
+  product_name: 'Desk',
+  category: 'Electronics',
+  price: 1274.14,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b33'),
+  product_id: 129,
+  product_name: 'Headphones',
+  category: 'Electronics',
+  price: 1745.49,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b34'),
+  product_id: 130,
+  product_name: 'Stove',
+  category: 'Electronics',
+  price: 1611.27,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b38'),
+  product_id: 134,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 1618.73,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3e'),
+  product_id: 140,
+  product_name: 'Refrigerator',
+  category: 'Furniture',
+  price: 1639.67,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3f'),
+  product_id: 141,
+  product_name: 'Microwave',
+  category: 'Furniture',
+  price: 1724.25,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b40'),
+  product_id: 142,
+  product_name: 'Sofa',
+  category: 'Electronics',
+  price: 33.77,
+  in_stock: false,
+  ratings: 1
+}
+Type "it" for more
+db["Products"].find({category: {"$in": ["Electronics","Furniture"]}})
+{
+  _id: ObjectId('68e2b9588084854843214b18'),
+  product_id: 102,
+  product_name: 'Refrigerator',
+  category: 'Furniture',
+  price: 1776.68,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b19'),
+  product_id: 103,
+  product_name: 'Microwave',
+  category: 'Furniture',
+  price: 954.99,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1c'),
+  product_id: 106,
+  product_name: 'Sofa',
+  category: 'Furniture',
+  price: 1526.35,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1d'),
+  product_id: 107,
+  product_name: 'Stove',
+  category: 'Furniture',
+  price: 1131.33,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1f'),
+  product_id: 109,
+  product_name: 'Camera',
+  category: 'Furniture',
+  price: 997.72,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b20'),
+  product_id: 110,
+  product_name: 'Chair',
+  category: 'Furniture',
+  price: 1055.01,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b23'),
+  product_id: 113,
+  product_name: 'Laptop',
+  category: 'Electronics',
+  price: 233.63,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b26'),
+  product_id: 116,
+  product_name: 'Laptop',
+  category: 'Furniture',
+  price: 642.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b28'),
+  product_id: 118,
+  product_name: 'Printer',
+  category: 'Furniture',
+  price: 1816.98,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b29'),
+  product_id: 119,
+  product_name: 'Printer',
+  category: 'Electronics',
+  price: 513.6,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2e'),
+  product_id: 124,
+  product_name: 'Microwave',
+  category: 'Electronics',
+  price: 593.71,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b31'),
+  product_id: 127,
+  product_name: 'Refrigerator',
+  category: 'Electronics',
+  price: 1620.08,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b32'),
+  product_id: 128,
+  product_name: 'Desk',
+  category: 'Electronics',
+  price: 1274.14,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b33'),
+  product_id: 129,
+  product_name: 'Headphones',
+  category: 'Electronics',
+  price: 1745.49,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b34'),
+  product_id: 130,
+  product_name: 'Stove',
+  category: 'Electronics',
+  price: 1611.27,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b38'),
+  product_id: 134,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 1618.73,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3e'),
+  product_id: 140,
+  product_name: 'Refrigerator',
+  category: 'Furniture',
+  price: 1639.67,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3f'),
+  product_id: 141,
+  product_name: 'Microwave',
+  category: 'Furniture',
+  price: 1724.25,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b40'),
+  product_id: 142,
+  product_name: 'Sofa',
+  category: 'Electronics',
+  price: 33.77,
+  in_stock: false,
+  ratings: 1
+}
+Type "it" for more
+db["Products"].find({ratings: {"$nin": [1,2,3]}})
+{
+  _id: ObjectId('68e2b9588084854843214b1a'),
+  product_id: 104,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 256.8,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1c'),
+  product_id: 106,
+  product_name: 'Sofa',
+  category: 'Furniture',
+  price: 1526.35,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1e'),
+  product_id: 108,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 1546.52,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1f'),
+  product_id: 109,
+  product_name: 'Camera',
+  category: 'Furniture',
+  price: 997.72,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b21'),
+  product_id: 111,
+  product_name: 'Watch',
+  category: 'Home Decor',
+  price: 866.53,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b26'),
+  product_id: 116,
+  product_name: 'Laptop',
+  category: 'Furniture',
+  price: 642.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b27'),
+  product_id: 117,
+  product_name: 'Smartphone',
+  category: 'Computers',
+  price: 1026.97,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2d'),
+  product_id: 123,
+  product_name: 'Microwave',
+  category: 'Computers',
+  price: 172.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b33'),
+  product_id: 129,
+  product_name: 'Headphones',
+  category: 'Electronics',
+  price: 1745.49,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b36'),
+  product_id: 132,
+  product_name: 'Keyboard',
+  category: 'Appliances',
+  price: 1787.27,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b37'),
+  product_id: 133,
+  product_name: 'Sofa',
+  category: 'Appliances',
+  price: 1087.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3c'),
+  product_id: 138,
+  product_name: 'Keyboard',
+  category: 'Appliances',
+  price: 471.31,
+  in_stock: true,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3d'),
+  product_id: 139,
+  product_name: 'Laptop',
+  category: 'Computers',
+  price: 865.67,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b44'),
+  product_id: 146,
+  product_name: 'Desk',
+  category: 'Furniture',
+  price: 257.33,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b46'),
+  product_id: 148,
+  product_name: 'Lamp',
+  category: 'Computers',
+  price: 1886.96,
+  in_stock: true,
+  ratings: 4
+}
+db["Products"].find({price: {$gt: 100, $lt: 300}})
+{
+  _id: ObjectId('68e2b9588084854843214b1a'),
+  product_id: 104,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 256.8,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b23'),
+  product_id: 113,
+  product_name: 'Laptop',
+  category: 'Electronics',
+  price: 233.63,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2d'),
+  product_id: 123,
+  product_name: 'Microwave',
+  category: 'Computers',
+  price: 172.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b44'),
+  product_id: 146,
+  product_name: 'Desk',
+  category: 'Furniture',
+  price: 257.33,
+  in_stock: false,
+  ratings: 4
+}
+db["Products"].find({$or: [{ratings: 5, in_stock: false}]})
+{
+  _id: ObjectId('68e2b9588084854843214b1c'),
+  product_id: 106,
+  product_name: 'Sofa',
+  category: 'Furniture',
+  price: 1526.35,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3d'),
+  product_id: 139,
+  product_name: 'Laptop',
+  category: 'Computers',
+  price: 865.67,
+  in_stock: false,
+  ratings: 5
+}
+db["Products"].find({price: {$nin: [1282.36,1776.68,1432.22,1526.35,1131.33,1546.52,1055.01,1280.09,1026.97,1816.98,1515.99,1860.8,1620.08,1274.14,1745.49,1611.27,1787.27,1087.9,1618.73,1794.26,1639.67,1724.25,1031.28,1886.96,1047.21]}})
+{
+  _id: ObjectId('68e2b9588084854843214b19'),
+  product_id: 103,
+  product_name: 'Microwave',
+  category: 'Furniture',
+  price: 954.99,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1a'),
+  product_id: 104,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 256.8,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1f'),
+  product_id: 109,
+  product_name: 'Camera',
+  category: 'Furniture',
+  price: 997.72,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b21'),
+  product_id: 111,
+  product_name: 'Watch',
+  category: 'Home Decor',
+  price: 866.53,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b22'),
+  product_id: 112,
+  product_name: 'Desk',
+  category: 'Home Decor',
+  price: 70.33,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b23'),
+  product_id: 113,
+  product_name: 'Laptop',
+  category: 'Electronics',
+  price: 233.63,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b24'),
+  product_id: 114,
+  product_name: 'Printer',
+  category: 'Computers',
+  price: 82.23,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b26'),
+  product_id: 116,
+  product_name: 'Laptop',
+  category: 'Furniture',
+  price: 642.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b29'),
+  product_id: 119,
+  product_name: 'Printer',
+  category: 'Electronics',
+  price: 513.6,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2a'),
+  product_id: 120,
+  product_name: 'Lamp',
+  category: 'Home Decor',
+  price: 832.56,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2c'),
+  product_id: 122,
+  product_name: 'Blender',
+  category: 'Home Decor',
+  price: 473.02,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2d'),
+  product_id: 123,
+  product_name: 'Microwave',
+  category: 'Computers',
+  price: 172.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2e'),
+  product_id: 124,
+  product_name: 'Microwave',
+  category: 'Electronics',
+  price: 593.71,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2f'),
+  product_id: 125,
+  product_name: 'Stove',
+  category: 'Computers',
+  price: 339.22,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b35'),
+  product_id: 131,
+  product_name: 'Sofa',
+  category: 'Home Decor',
+  price: 389.41,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3a'),
+  product_id: 136,
+  product_name: 'Television',
+  category: 'Appliances',
+  price: 649.65,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3c'),
+  product_id: 138,
+  product_name: 'Keyboard',
+  category: 'Appliances',
+  price: 471.31,
+  in_stock: true,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3d'),
+  product_id: 139,
+  product_name: 'Laptop',
+  category: 'Computers',
+  price: 865.67,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b40'),
+  product_id: 142,
+  product_name: 'Sofa',
+  category: 'Electronics',
+  price: 33.77,
+  in_stock: false,
+  ratings: 1
+}
+Type "it" for more
+db["Products"].find({$or: [{ratings: 5}, {in_stock: false}]})
+{
+  _id: ObjectId('68e2b9588084854843214b18'),
+  product_id: 102,
+  product_name: 'Refrigerator',
+  category: 'Furniture',
+  price: 1776.68,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1a'),
+  product_id: 104,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 256.8,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1c'),
+  product_id: 106,
+  product_name: 'Sofa',
+  category: 'Furniture',
+  price: 1526.35,
+  in_stock: false,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1d'),
+  product_id: 107,
+  product_name: 'Stove',
+  category: 'Furniture',
+  price: 1131.33,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1e'),
+  product_id: 108,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 1546.52,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b1f'),
+  product_id: 109,
+  product_name: 'Camera',
+  category: 'Furniture',
+  price: 997.72,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b21'),
+  product_id: 111,
+  product_name: 'Watch',
+  category: 'Home Decor',
+  price: 866.53,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b26'),
+  product_id: 116,
+  product_name: 'Laptop',
+  category: 'Furniture',
+  price: 642.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2a'),
+  product_id: 120,
+  product_name: 'Lamp',
+  category: 'Home Decor',
+  price: 832.56,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2b'),
+  product_id: 121,
+  product_name: 'Monitor',
+  category: 'Home Decor',
+  price: 1515.99,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2c'),
+  product_id: 122,
+  product_name: 'Blender',
+  category: 'Home Decor',
+  price: 473.02,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2d'),
+  product_id: 123,
+  product_name: 'Microwave',
+  category: 'Computers',
+  price: 172.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b30'),
+  product_id: 126,
+  product_name: 'Printer',
+  category: 'Computers',
+  price: 1860.8,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b34'),
+  product_id: 130,
+  product_name: 'Stove',
+  category: 'Electronics',
+  price: 1611.27,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b35'),
+  product_id: 131,
+  product_name: 'Sofa',
+  category: 'Home Decor',
+  price: 389.41,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b37'),
+  product_id: 133,
+  product_name: 'Sofa',
+  category: 'Appliances',
+  price: 1087.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b38'),
+  product_id: 134,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 1618.73,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b39'),
+  product_id: 135,
+  product_name: 'Chair',
+  category: 'Appliances',
+  price: 1794.26,
+  in_stock: false,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3a'),
+  product_id: 136,
+  product_name: 'Television',
+  category: 'Appliances',
+  price: 649.65,
+  in_stock: false,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+Type "it" for more
+db["Products"].find({category: {$in: ["Electronics", "Computers"]}, in_stock: true})
+{
+  _id: ObjectId('68e2b9588084854843214b1b'),
+  product_id: 105,
+  product_name: 'Watch',
+  category: 'Computers',
+  price: 1432.22,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b23'),
+  product_id: 113,
+  product_name: 'Laptop',
+  category: 'Electronics',
+  price: 233.63,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b24'),
+  product_id: 114,
+  product_name: 'Printer',
+  category: 'Computers',
+  price: 82.23,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b25'),
+  product_id: 115,
+  product_name: 'Tablet',
+  category: 'Computers',
+  price: 1280.09,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b27'),
+  product_id: 117,
+  product_name: 'Smartphone',
+  category: 'Computers',
+  price: 1026.97,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b29'),
+  product_id: 119,
+  product_name: 'Printer',
+  category: 'Electronics',
+  price: 513.6,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2e'),
+  product_id: 124,
+  product_name: 'Microwave',
+  category: 'Electronics',
+  price: 593.71,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2f'),
+  product_id: 125,
+  product_name: 'Stove',
+  category: 'Computers',
+  price: 339.22,
+  in_stock: true,
+  ratings: 1
+}
+{
+  _id: ObjectId('68e2b9588084854843214b31'),
+  product_id: 127,
+  product_name: 'Refrigerator',
+  category: 'Electronics',
+  price: 1620.08,
+  in_stock: true,
+  ratings: 2
+}
+{
+  _id: ObjectId('68e2b9588084854843214b32'),
+  product_id: 128,
+  product_name: 'Desk',
+  category: 'Electronics',
+  price: 1274.14,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b33'),
+  product_id: 129,
+  product_name: 'Headphones',
+  category: 'Electronics',
+  price: 1745.49,
+  in_stock: true,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b42'),
+  product_id: 144,
+  product_name: 'Watch',
+  category: 'Electronics',
+  price: 846.47,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b46'),
+  product_id: 148,
+  product_name: 'Lamp',
+  category: 'Computers',
+  price: 1886.96,
+  in_stock: true,
+  ratings: 4
+}
+db["Products"].find({ratings: {$gt: 2}, price: {$lt: 500}})
+{
+  _id: ObjectId('68e2b9588084854843214b1a'),
+  product_id: 104,
+  product_name: 'Camera',
+  category: 'Home Decor',
+  price: 256.8,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b22'),
+  product_id: 112,
+  product_name: 'Desk',
+  category: 'Home Decor',
+  price: 70.33,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b24'),
+  product_id: 114,
+  product_name: 'Printer',
+  category: 'Computers',
+  price: 82.23,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2c'),
+  product_id: 122,
+  product_name: 'Blender',
+  category: 'Home Decor',
+  price: 473.02,
+  in_stock: false,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b2d'),
+  product_id: 123,
+  product_name: 'Microwave',
+  category: 'Computers',
+  price: 172.42,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3b'),
+  product_id: 137,
+  product_name: 'Bookshelf',
+  category: 'Electronics',
+  price: 237.9,
+  in_stock: false,
+  ratings: 4
+}
+{
+  _id: ObjectId('68e2b9588084854843214b3c'),
+  product_id: 138,
+  product_name: 'Keyboard',
+  category: 'Appliances',
+  price: 471.31,
+  in_stock: true,
+  ratings: 5
+}
+{
+  _id: ObjectId('68e2b9588084854843214b43'),
+  product_id: 145,
+  product_name: 'Microwave',
+  category: 'Home Decor',
+  price: 459.77,
+  in_stock: true,
+  ratings: 3
+}
+{
+  _id: ObjectId('68e2b9588084854843214b44'),
+  product_id: 146,
+  product_name: 'Desk',
+  category: 'Furniture',
+  price: 257.33,
+  in_stock: false,
+  ratings: 4
+}
+db["Products"].find({product_name: {$in: ["Laptop", "Tablet"]}, price: {$gt: 500}, in_stock: true})
+{
+  _id: ObjectId('68e2b9588084854843214b25'),
+  product_id: 115,
+  product_name: 'Tablet',
+  category: 'Computers',
+  price: 1280.09,
+  in_stock: true,
+  ratings: 3
+}
