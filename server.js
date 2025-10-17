@@ -13,7 +13,7 @@ connectToDb((err) => {
     }
 })
 
-app.get('/Musicals', (req, res) => {
+app.get('/Broadway', (req, res) => {
     let musicals = []
     db.collections('Musicals')
     .find
