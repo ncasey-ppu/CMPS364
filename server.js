@@ -7,17 +7,17 @@ let db
 connectToDb((err) => {
     if (!err) {
         app.listen(3000, () => {
-        console.log('app is listening to port 3000')
+            console.log('app is listening to port 3000')
         })
         db = getDb()
     }
 })
 
-app.get('/Broadway', (req, res) => {
+app.get('/Musicals', (req, res) => {
     let musicals = []
     db.collections('Musicals')
     .find
-    .sort({ Title: 1 })
+    .sort({ title: 1 })
     .forEach(musical => musicals.push(musical))
     .then(() => {
         res.status(200).json(musicals)
