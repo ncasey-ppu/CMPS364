@@ -15,7 +15,7 @@ connectToDb((err) => {
 
 app.get('/Broadway', (req, res) => {
     let musicals = []
-    db.collections('Musicals')
+    db.collection('Musicals')
     .find
     .sort({ title: 1 })
     .forEach(musical => musicals.push(musical))
