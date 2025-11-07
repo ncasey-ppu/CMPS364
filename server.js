@@ -1,5 +1,6 @@
 const express = require('express')
 const { connectToDb, getDb } = require('./db')
+const { ObjectId } = require('mongodb')
 
 const app = express()
 
@@ -26,4 +27,21 @@ app.get('/Broadway', (req, res) => {
         res.status(500).json({error: 'Could not fetch documents'})
     })
     //res.json({msg: "Welcome to Broadway"})
+})
+
+app.get('/Broadway:id', (req, res) => {
+    let musicals = []
+    if(ObjectId.isValid(req.params.id)){
+      db.collection('Musicals')
+        .findOne({_id: new ObjectId(req.params.id)})
+        .then(doc => {
+         resizeTo.status(200).json(doc)
+        })
+        .catch(err => {
+        res.status(500).json({error: 'Could not fetch the document'})
+        })
+    } else {
+        resizeTo.status(500).json({error: 'Could not fetch the document'})
+    }
+
 })
