@@ -43,5 +43,33 @@ app.get('/Broadway/:id', (req, res) => {
     } else {
         res.status(500).json({error: 'Could not fetch the document'})
     }
-    
+})
+
+app.get('/Broadway/title/:title', async (req, res) => {
+    const titleParam = req.params.title
+    try {
+        const musical = await db.collection('Musicals').findOne({
+            title: { $regex: new RegExp(`^${titleParam}$`, 'i') }
+        })
+        
+        if (!musical) {
+            return res.status(404).json({error: 'Could not fetch the document'})
+        }
+        res.status(200).json(musical)
+    } catch (err) {
+        res.status(500).json({error: 'Could not fetch document'})
+    }
+})
+
+app.post('/Broadway', (req, res) => {
+    const musical = req.body
+
+    db.collection('Musicals')
+    .insertOne(musical)
+    .then(result => {
+        res.status(201).json(result)
+    })
+    .catch(err => {
+        res.status(500).json({err: 'Could not create new document'})
+    })
 })
