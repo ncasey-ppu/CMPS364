@@ -46,19 +46,22 @@ app.get('/Broadway/:id', (req, res) => {
 })
 
 app.get('/Broadway/title/:title', async (req, res) => {
-    const titleParam = req.params.title
-    try {
-        const musical = await db.collection('Musicals').findOne({
-            title: { $regex: new RegExp(`^${titleParam}$`, 'i') }
-        })
-        
-        if (!musical) {
-            return res.status(404).json({error: 'Could not fetch the document'})
-        }
-        res.status(200).json(musical)
-    } catch (err) {
-        res.status(500).json({error: 'Could not fetch document'})
-    }
+  const titleParam = req.params.title
+  console.log('Searching for title:', titleParam)
+
+  try {
+    const musical = await db.collection('Musicals').findOne({
+      title: { $regex: new RegExp(`^${titleParam.trim()}$`, 'i') }
+    })
+    console.log('Found musical:', musical)
+
+    if (!musical) return res.status(404).json({ error: 'No musical found' })
+
+    res.status(200).json(musical)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Could not fetch document' })
+  }
 })
 
 app.post('/Broadway', (req, res) => {
