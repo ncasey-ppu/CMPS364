@@ -6,7 +6,7 @@ module.exports = {
     connectToDb: (cb) => {
         MongoClient.connect('mongodb://localhost:27017/Broadway')
         .then((client) => {
-            dbConnection = client.db()
+            dbConnection = client.db('Broadway')
             return cb()
         })
         .catch(err => {
