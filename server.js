@@ -48,14 +48,23 @@ app.get('/Broadway/:id', (req, res) => {
 })
 
 app.post('/Broadway', (req, res) => {
-    const musical = req.body
+  console.log('Incoming POST request...')
+  console.log('Request body:', req.body)
 
-    db.collection('Musicals')
+  if (!db) {
+    console.error('Database not connected yet')
+    return res.status(500).json({ error: 'Database not connected' })
+  }
+
+  const musical = req.body
+  db.collection('Musicals')
     .insertOne(musical)
     .then(result => {
-        res.status(201).json(result)
+      console.log('Insert success:', result.insertedId)
+      res.status(201).json(result)
     })
     .catch(err => {
-        res.status(500).json({err: 'Could not create new document'})
+      console.error('Insert error:', err)
+      res.status(500).json({ error: 'Could not create new document' })
     })
 })
