@@ -5,11 +5,16 @@ const { ObjectId } = require('mongodb')
 const app = express()
 app.use(express.json())
 
-let db;
-
-app.post('/test', (req, res) => {
-  console.log('✅ POST /test route hit!');
-  res.status(200).json({ message: 'Test successful' });
+let db
+connectToDb((err) => {
+    if (!err) {
+        db = getDb();
+        app.listen(3000, () => {
+            console.log('Database connected and app listening.');
+        });
+    } else {
+        console.log('Database connection failed:', err);
+    }
 });
 
 app.get('/Broadway', (req, res) => {
@@ -53,18 +58,6 @@ app.post('/Broadway', (req, res) => {
         res.status(201).json(result)
       })
       .catch(err => {
-        console.log('MongoDB insert error details:', err);
         res.status(500).json({err: 'Could not create new document'});
     })
 })
-
-connectToDb((err) => {
-    if (!err) {
-        db = getDb();
-        app.listen(3000, () => {
-            console.log('Database connected and app listening.');
-        });
-    } else {
-        console.log('Database connection failed:', err);
-    }
-});
