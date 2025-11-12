@@ -6,15 +6,23 @@ const app = express()
 
 app.use(express.json())
 
-let db
+let db;
+
+app.post('/test', (req, res) => {
+  console.log('✅ POST /test route hit!');
+  res.status(200).json({ message: 'Test successful' });
+});
+
 connectToDb((err) => {
     if (!err) {
+        db = getDb();
         app.listen(3000, () => {
-            console.log('app is listening to port 3000')
-        })
-        db = getDb()
+            console.log('Database connected and app listening.');
+        });
+    } else {
+        console.log('Database connection failed:', err);
     }
-})
+});
 
 app.get('/Broadway', (req, res) => {
     let musicals = []
@@ -47,15 +55,16 @@ app.get('/Broadway/:id', (req, res) => {
     }
 })
 
-app.post('/Broadway', (req, res) => {
-    const musical = req.body
+app.post('/Broadway', async (req, res) => {
+  console.log('POST /Broadway hit');
+  console.log('Request body:', req.body);
 
-    db.collection('Musicals')
-      .insertOne(musical)
-      .then(result => {
-        res.status(201).json(result)
-      })
-      .catch(err => {
-        res.status(500).json({err: 'Could not create new document'})
-    })
-})
+  try {
+    const result = await db.collection('Musicals').insertOne(req.body);
+    console.log('Insert result:', result);
+    res.status(201).json(result);
+  } catch (err) {
+    console.error('❌ Error inserting musical:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
