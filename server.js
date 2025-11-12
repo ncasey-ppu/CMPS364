@@ -51,11 +51,11 @@ app.post('/Broadway', (req, res) => {
     const musical = req.body
 
     db.collection('Musicals')
-    .insertOne(musical)
-    .then(result => {
+      .insertOne(musical)
+      .then(result => {
         res.status(201).json(result)
-    })
-    .catch(err => {
+      })
+      .catch(err => {
         res.status(500).json({err: 'Could not create new document'})
     })
 })
