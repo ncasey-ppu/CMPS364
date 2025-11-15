@@ -62,6 +62,7 @@ app.post('/Broadway', (req, res) => {
     })
 })
 
+//Delete by ID
 app.delete('/Broadway/:id', (req, res) => {
     if (ObjectId.isValid(req.params.id)) {
 
@@ -77,4 +78,18 @@ app.delete('/Broadway/:id', (req, res) => {
     } else {
         res.status(500).json({error: 'Could not delete document'})
     }
+})
+
+//Delete without ID
+app.delete('/Broadway', async (req, res) => {
+    const query = req.body;
+    try {
+        const result = await db.collection('Musicals').deleteOne(query);
+        if (result.deletedCount === 0) {
+            return res.status(500).json({error: 'Could not delete document'})
+        }
+        res.status(200).json(result)
+    } catch (err) {
+        res.status(500).json({error: 'Could not delete document'})
+      }
 })
