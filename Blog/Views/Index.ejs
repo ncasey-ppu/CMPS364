@@ -1,0 +1,20 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/Blog/Public/Css/styles.css">
+</head>
+<body>
+    <h1>Welcome to Broadway</h1>
+    <a href="/posts/new">Create a New Post</a>
+    <ul>
+        <% posts.forEach(post => { %>
+        <li>
+            <a href="/posts/<%= post._id %>"><%= post.title %></a>
+            <p><%= post.createdAt.toDateString() %></p>
+        </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

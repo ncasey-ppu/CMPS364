@@ -1,0 +1,13 @@
+<!-- views/post.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+ <title><%= post.title %></title>   
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <p><%= post.createdAt.toDateString() %></p>
+    <p><%= post.content %></p>
+    <a href="/">Back to Home</a>
+</body>
+</html>
