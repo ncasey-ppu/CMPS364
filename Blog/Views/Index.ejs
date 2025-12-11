@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Blog</title>
+    <title>Welcome to Broadway</title>
     <link rel="stylesheet" href="/Blog/Public/Css/styles.css">
 </head>
 <body>
+    <form action="/search" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search posts..." required>
+        <button type="submit">Search</button>
+    </form>
     <h1>Welcome to Broadway</h1>
     <a href="/posts/new">Create a New Post</a>
     <ul>

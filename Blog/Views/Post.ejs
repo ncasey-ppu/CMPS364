@@ -9,5 +9,51 @@
     <p><%= post.createdAt.toDateString() %></p>
     <p><%= post.content %></p>
     <a href="/">Back to Home</a>
+
+    <h2>Comments</h2>
+    <ul id="comments">
+        <% comments.forEach(c => { %>
+          <li><strong><%= c.author %>:</strong> <%= c.comment %></li>
+        <% }) %>
+    </ul>
+
+    <h3>Add a Comment</h3>
+    <form id="commentForm">
+        <input type="text" id="author" placeholder="Your name" required>
+        <input type="text" id="comment" placeholder="Your comment" required>
+        <button type="submit">Add Comment</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+    socket.emit("joinPostRoom", "<%= post._id %>");
+
+    socket.on("newComment", (comment) => {
+      const commentsList = document.getElementById("comments");
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${comment.author}:</strong> ${comment.comment}`;
+      commentsList.appendChild(li);
+    });
+
+    const form = document.getElementById("commentForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const author = document.getElementById("author").value;
+      const comment = document.getElementById("comment").value;
+
+      if (!author || !comment) return alert("Please fill in both fields");
+
+      await fetch(`/posts/<%= post._id %>/comments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `author=${encodeURIComponent(author)}&comment=${encodeURIComponent(comment)}`
+      });
+
+      form.reset();
+    });
+    </script>
 </body>
 </html>
