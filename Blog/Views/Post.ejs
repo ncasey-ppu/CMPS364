@@ -10,50 +10,55 @@
     <p><%= post.content %></p>
     <a href="/">Back to Home</a>
 
-    <h2>Comments</h2>
-    <ul id="comments">
-        <% comments.forEach(c => { %>
-          <li><strong><%= c.author %>:</strong> <%= c.comment %></li>
-        <% }) %>
-    </ul>
-
-    <h3>Add a Comment</h3>
+    <h2>Add a Comment</h2>
     <form id="commentForm">
-        <input type="text" id="author" placeholder="Your name" required>
-        <input type="text" id="comment" placeholder="Your comment" required>
+        <input type="text" id="author" name="author" placeholder="Your name" required>
+        <input type="text" id="comment" name="comment" placeholder="Your comment" required>
         <button type="submit">Add Comment</button>
     </form>
+
+    <h3>Comments</h3>
+    <ul id="comments">
+        <% comments.forEach(c => { %>
+            <li><strong><%= c.author %>:</strong> <%= c.comment %></li>
+        <% }) %>
+    </ul>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
+        socket.emit("joinPostRoom", "<%= post._id %>");
 
-    socket.emit("joinPostRoom", "<%= post._id %>");
+        socket.on("newComment", (comment) => {
+            const commentsList = document.getElementById("comments");
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${comment.author}:</strong> ${comment.comment}`;
+            commentsList.appendChild(li);
+        });
 
-    socket.on("newComment", (comment) => {
-      const commentsList = document.getElementById("comments");
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${comment.author}:</strong> ${comment.comment}`;
-      commentsList.appendChild(li);
-    });
+        const form = document.getElementById("commentForm");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-    const form = document.getElementById("commentForm");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+            const author = document.getElementById("author").value;
+            const comment = document.getElementById("comment").value;
 
-      const author = document.getElementById("author").value;
-      const comment = document.getElementById("comment").value;
+            if (!author || !comment) return alert("Please fill in both fields");
 
-      if (!author || !comment) return alert("Please fill in both fields");
+            const res = await fetch(`/posts/<%= post._id %>/comments`, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `author=${encodeURIComponent(author)}&comment=${encodeURIComponent(comment)}`
+            });
 
-      await fetch(`/posts/<%= post._id %>/comments`, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `author=${encodeURIComponent(author)}&comment=${encodeURIComponent(comment)}`
-      });
+            if (res.ok) {
+                console.log("Comment posted successfully");
+            } else {
+                console.error("Failed to post comment", res.status);
+            }
 
-      form.reset();
-    });
+            form.reset();
+        });
     </script>
 </body>
 </html>

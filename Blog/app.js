@@ -38,9 +38,9 @@ app.post("/posts", async (req, res) => {
 });
 
 app.get("/posts/:id", async (req, res) => {
-    const post = await Post.findById(req.params.id);
-      const comments = await Comment.find({ postId: post._id }).sort({ createdAt: 1 });
-    res.render("post", { post, comments });
+  const post = await Post.findById(req.params.id);
+  const comments = await Comment.find({ postId: req.params.id }).sort({ createdAt: -1 });
+  res.render("post", { post, comments });
 });
 
 app.get("/search", async (req, res) => {
@@ -56,6 +56,8 @@ app.get("/search", async (req, res) => {
 app.post("/posts/:id/comments", async (req, res) => {
   const { author, comment } = req.body;
   const postId = req.params.id;
+  console.log("POST /posts/:id/comments HIT");
+  console.log("req.body:", req.body);
 
   if (!author || !comment || !postId) {
     return res.status(400).send("Author, comment, and postId are required.");
@@ -86,13 +88,7 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/posts/:id", async (req, res) => {
-  const post = await Post.findById(req.params.id);
-  const comments = await Comment.find({ postId: post._id }).sort({ createdAt: 1 });
-  res.render("post", { post, comments });
-});
-
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
