@@ -56,6 +56,7 @@ app.get("/search", async (req, res) => {
 app.post("/posts/:id/comments", async (req, res) => {
   const { author, comment } = req.body;
   const postId = req.params.id;
+  //Testing if comments work since they were not showing on site
   console.log("POST /posts/:id/comments HIT");
   console.log("req.body:", req.body);
 
